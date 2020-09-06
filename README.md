@@ -1,8 +1,14 @@
+<p align="start">
+  <a href="https://vuetifyjs.com/en/" target="_blank">
+    <img src="./documentation/uspto.jpg" alt="Storyblok">
+  </a>
+</p>
 # United States Patent and Trademark (USPTO) Data Parser
 
 A python tool for reading, parsing, and finding patent using the United States Patent and Trademark (USPTO) [Bulk Data Storage System](https://bulkdata.uspto.gov/). This tool is designed to parse the Patent Grant Full Text Data section, which contains full text of each patent grant issued weekly (Tuesdays) from January 1, 1976 to present (excludes images/drawings).
 
 ## Requirements
+
 - Python >= 3.5
 - Pandas
 - Beautifulsoup4 >= 4.6.3
@@ -108,9 +114,4 @@ The code below reads a xml-version4 file (same as in the link above) that has al
 ```python
 data = read_and_parse_file_from_disk('../data/ipg080101.xml',['INVT','ASSG'],'xml4')
 ```
-## Look for a patent location
-You can search for the location of a patent by reading the patent_locations.csv file and search by patent number. The code below will return the full URL of the file that contains the patent with number RE0286753
-```python
-data = pd.read_csv(f'../data/patent_locations.csv')
-data.query('patent_number == "RE0286753"')
-```
+
