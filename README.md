@@ -1,8 +1,9 @@
 <p align="start">
-  <a href="https://vuetifyjs.com/en/" target="_blank">
+  <a href="https://www.uspto.gov/" target="_blank">
     <img src="./documentation/uspto.jpg" alt="Storyblok">
   </a>
 </p>
+
 # United States Patent and Trademark (USPTO) Data Parser
 
 A python tool for reading, parsing, and finding patent using the United States Patent and Trademark (USPTO) [Bulk Data Storage System](https://bulkdata.uspto.gov/). This tool is designed to parse the Patent Grant Full Text Data section, which contains full text of each patent grant issued weekly (Tuesdays) from January 1, 1976 to present (excludes images/drawings).
