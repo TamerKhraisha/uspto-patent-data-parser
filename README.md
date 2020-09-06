@@ -2,8 +2,27 @@
 
 A python tool for reading, parsing, and finding patent using the United States Patent and Trademark (USPTO) [Bulk Data Storage System](https://bulkdata.uspto.gov/). This tool is designed to parse the Patent Grant Full Text Data section, which contains full text of each patent grant issued weekly (Tuesdays) from January 1, 1976 to present (excludes images/drawings).
 
-## Read and parse patent data
-##### 1- For the period 1967-2001, files are in txt format and the following data items are can be parsed:
+## Requirements
+- Python >= 3.5
+- Pandas
+- Beautifulsoup4 >= 4.6.3
+
+## Installation
+```python
+from uspto import *
+```
+## Usage
+### - Get a list of the files available for a specific year
+```python
+file_list = get_patent_files_by_year(2008)
+```
+### Download file to disk
+```python
+url = 'https://bulkdata.uspto.gov/data/patent/grant/redbook/fulltext/1999/pftaps19990406_wk14.zip'
+download_file_to_disk(url,'target/path')
+```
+### - Read and parse patent data
+#### 1- For the period 1967-2001, files are in txt format and the following data items are can be parsed:
 * **INVT**: inventor information.
 * **ASSG**: assignee information.
 * **PRIR**: foreign priority information.
@@ -35,7 +54,7 @@ data = read_and_parse_from_url(url,items)
 data = read_and_parse_file_from_disk('../data/pftaps19801230_wk53.txt',['INVT','ASSG'],'txt')
 ```
 
-##### 2- For the period 2002-2004, files are in xml-version2 format, and the following items can be parsed
+#### 2- For the period 2002-2004, files are in xml-version2 format, and the following items can be parsed
 * **INVT**: inventor information.
 * **ASSG**: assignee information.
 * **PRIP**: foreign priority information.
@@ -64,7 +83,7 @@ xb = read_and_parse_from_url(url,items)
 ```python
 data = read_and_parse_file_from_disk('../data/pg020101.xml',['INVT','ASSG'],'xml2')
 ```
-##### 3-  For the period 2003-present, files are in xml-version4 format, and the following items can be parsed
+#### 3-  For the period 2003-present, files are in xml-version4 format, and the following items can be parsed
 * **INVT**: inventor information.
 * **ASSG**: assignee information.
 * **PRIP**: foreign priority information.
