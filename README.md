@@ -18,7 +18,7 @@ A python tool for reading, parsing, and finding patent using the United States P
 from uspto import *
 ```
 ## Usage
-### - Get a list of the files available for a specific year
+### Get a list of the files available for a specific year
 ```python
 file_list = get_patent_files_by_year(2008)
 ```
@@ -27,7 +27,7 @@ file_list = get_patent_files_by_year(2008)
 url = 'https://bulkdata.uspto.gov/data/patent/grant/redbook/fulltext/1999/pftaps19990406_wk14.zip'
 download_file_to_disk(url,'target/path')
 ```
-### - Read and parse patent data
+### Read and parse single file data
 #### 1- For the period 1967-2001, files are in txt format and the following data items are can be parsed:
 * **INVT**: inventor information.
 * **ASSG**: assignee information.
