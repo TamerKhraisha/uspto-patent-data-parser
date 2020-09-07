@@ -6,7 +6,7 @@
 
 # United States Patent and Trademark (USPTO) Data Parser
 
-A python tool for reading, parsing, and finding patent using the United States Patent and Trademark (USPTO) [Bulk Data Storage System](https://bulkdata.uspto.gov/). This tool is designed to parse the Patent Grant Full Text Data section, which contains full text of each patent grant issued weekly (Tuesdays) from January 1, 1976 to present (excludes images/drawings).
+A python tool for reading, parsing, and finding patents using the United States Patent and Trademark (USPTO) [Bulk Data Storage System](https://bulkdata.uspto.gov/). This tool is designed to parse the Patent Grant Full Text Data section, which contains full text of each patent grant issued weekly (Tuesdays) from January 1, 1976 to present (excludes images/drawings).
 
 ## Requirements
 
@@ -28,6 +28,7 @@ file_list = get_patent_files_by_year(2008)
 url = 'https://bulkdata.uspto.gov/data/patent/grant/redbook/fulltext/1999/pftaps19990406_wk14.zip'
 download_file_to_disk(url,'target/path')
 ```
+###
 ### Read and parse single file data
 #### 1- For the period 1967-2001, files are in txt format and the following data items are can be parsed:
 * **INVT**: inventor information.
