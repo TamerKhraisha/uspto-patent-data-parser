@@ -62,7 +62,7 @@ items = ['INVT','ASSG']
 data = read_and_parse_from_url(url,items)
 ```
 ##### Read and parse single file from disk
- The code below reads a txt file (same as in the link above) that has already been downloaded to disk and returns inventor and assignee data.
+ The code below reads a txt file (same as in the link above) that has already been downloaded to disk and will return inventor and assignee data.
 ```python
 data = read_and_parse_file_from_disk('path/to/file/pftaps19801230_wk53.txt',['INVT','ASSG'],'txt')
 ```
@@ -91,14 +91,14 @@ data = download_yearly_data(2002,['INVT','ASSG'])
 ```
 
 ##### Read and parse single file from URL
-The code below will parse all patents for the provided zip file (year 2002) in the URL and extract inventor and assignee data. It will read and parse a xml-version2 file in memory without downloading it to disk.
+The code below will parse all patents for the provided zip file (year 2002) in the URL and extract inventor and assignee data. It will read and parse an xml-version2 file in memory without downloading it to disk.
 ```python
 url = 'https://bulkdata.uspto.gov/data/patent/grant/redbook/fulltext/2002/pg020101.zip'
 items = ['INVT','ASSG']
 xb = read_and_parse_from_url(url,items)
 ```
 ##### Read and parse single file from disk
- The code below reads a xml-version2 file (same as in the link above) that has already been downloaded to disk and returns inventor and assignee data.
+ The code below reads an xml-version2 file (same as in the link above) that has already been downloaded to disk and will return inventor and assignee data.
 ```python
 data = read_and_parse_file_from_disk('path/to/file/pg020101.xml',['INVT','ASSG'],'xml2')
 ```
@@ -121,14 +121,14 @@ The code below will read and parse all files for the year 2008 and extract inven
 data = download_yearly_data(2008,['INVT','ASSG'])
 ```
 ##### Read and parse single file from URL
-The code below will parse all patents for the provided zip file (year 2008) in the URL and extract inventor and assignee data. It will read and parse a xml-version4 file in memory without downloading it to disk.
+The code below will parse all patents for the provided zip file (year 2008) in the URL and extract inventor and assignee data. It will read and parse an xml-version4 file in memory without downloading it to disk.
 ```python
 url = 'https://bulkdata.uspto.gov/data/patent/grant/redbook/fulltext/2008/ipg080101.zip'
 items = ['INVT','ASSG']
 data = read_and_parse_from_url(url,items)
 ```
 ##### Read and parse single file from disk
-The code below reads a xml-version4 file (same as in the link above) that has already been downloaded to disk and returns inventor and assignee data.
+The code below reads an xml-version4 file (same as in the link above) that has already been downloaded to disk and will return inventor and assignee data.
 ```python
 data = read_and_parse_file_from_disk('path/to/file/ipg080101.xml',['INVT','ASSG'],'xml4')
 ```
