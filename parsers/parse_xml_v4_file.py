@@ -379,11 +379,11 @@ def get_patent_classifications(root_tree):
         classifications_ipcr_list = []
         classification_ipcr_tags = ['ipc-version-indicator/date', 'classification-level', 'section', 'class', 'subclass', 'main-group', 'subgroup', 'symbol-position', 'classification-value', 'action-date/date', 'generating-office/country', 'classification-status','classification-data-source']
         for classification in classifications_ipcr:
-            classification_data = {}
+            classification_data_ipcr = {}
             for tag in classification_ipcr_tags:
                 if classification.find(tag) != None:
-                    classification_data[tag] = classification.find(tag).text
-            classifications_ipcr_list.append(classification_data)
+                    classification_data_ipcr[tag] = classification.find(tag).text
+            classifications_ipcr_list.append(classification_data_ipcr)
         classification_data['classifications_ipcr_list'] = classifications_ipcr_list
     if classifications_ipc:
         classifications_ipc_list = []
