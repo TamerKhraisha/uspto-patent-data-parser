@@ -99,7 +99,6 @@ def get_patent_identification_data(root_tree):
         publication_reference_info = {element.tag: element.text for element in list(publication_info)}
         document_data = {**document_data,**publication_reference_info}
     if application_info !=None:
-        application_reference_info = {element.tag: element.text for element in list(application_info)}
         if application_info.attrib and application_info.attrib['appl-type']:
             document_data['application_type'] = application_info.attrib['appl-type']
     if term_of_grant_info != None:
