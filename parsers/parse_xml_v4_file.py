@@ -99,10 +99,8 @@ def get_patent_identification_data(root_tree):
         publication_reference_info = {element.tag: element.text for element in list(publication_info)}
         document_data = {**document_data,**publication_reference_info}
     if application_info !=None:
-        application_reference_info = {element.tag: element.text for element in list(application_info)}
         if application_info.attrib and application_info.attrib['appl-type']:
-            application_reference_info['application_type'] =  application_info.attrib['appl-type']
-        document_data = {**document_data,**application_reference_info}
+            document_data['application_type'] = application_info.attrib['appl-type']
     if term_of_grant_info != None:
         term_of_grant = {}
         if term_of_grant_length != None:
@@ -379,11 +377,11 @@ def get_patent_classifications(root_tree):
         classifications_ipcr_list = []
         classification_ipcr_tags = ['ipc-version-indicator/date', 'classification-level', 'section', 'class', 'subclass', 'main-group', 'subgroup', 'symbol-position', 'classification-value', 'action-date/date', 'generating-office/country', 'classification-status','classification-data-source']
         for classification in classifications_ipcr:
-            classification_data = {}
+            classification_data_ipcr = {}
             for tag in classification_ipcr_tags:
                 if classification.find(tag) != None:
-                    classification_data[tag] = classification.find(tag).text
-            classifications_ipcr_list.append(classification_data)
+                    classification_data_ipcr[tag] = classification.find(tag).text
+            classifications_ipcr_list.append(classification_data_ipcr)
         classification_data['classifications_ipcr_list'] = classifications_ipcr_list
     if classifications_ipc:
         classifications_ipc_list = []
